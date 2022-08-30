@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Tourism Data ML DEPLOYMENT USING FLASK</title>
+  
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+
+
+<body bgcolor=#d4a3ae>
+ <div class="login">
+	<h1>Predict Cost</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+    	 
+    <input type="text" name="country" placeholder="country" required="required" />
+		<input type="text" name="age_group" placeholder="age_group" required="required" />
+    <input type="text" name="purpose" placeholder="purpose" required="required" />
+		<input type="text" name="tour_arrangement" placeholder="tour_arrangement" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   
+   <br>
+   <br>
+   {{ prediction_text }}
+ </div>
+</body>
+</head>
+</html>
